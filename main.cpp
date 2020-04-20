@@ -16,7 +16,7 @@
 #include "deklaracijos.h"
 //#include "filegen.h"
 //#include "skaityti.h"
-#include "studentas.h"
+#include "Studentas.h"
 
 using namespace std;
 	
@@ -27,27 +27,26 @@ using namespace std;
 
 
 
-bool gavoSkola(const studentas& st);
+bool gavoSkola(const Studentas& st);
 
-template<template <typename, typename> class Container>
-void rusiuoti(Container<studentas, allocator<studentas> >& stud, Container<studentas, allocator<studentas> >& vec1, Container<studentas, allocator<studentas> >& vec2);
+
+void rusiuoti(vector<Studentas>& stud, vector<Studentas>& vec1, vector<Studentas>& vec2);
 
 void generuoti(int size, string suffix);
 
-template<template <typename, typename> class Container>
-void isvesti(Container<studentas, allocator<studentas> >& cool, Container<studentas, allocator<studentas> >& notcool);
+
+void isvesti(vector<Studentas>& cool, vector<Studentas>& notcool);
 
 void avardas(string* vrd, string* pvrd);
 void rastiFailus(string* fpav);
 
-template<template <typename, typename> class Container>
+
 void skaityti(bool input, int num);
 
 
 int main(int argc, char** argv) {
 	srand(time(NULL));
 
- 	bool input;
  	setlocale(LC_ALL, "Lithuanian");
 	cout << "Ar norite generuoti naujus failus? [T]aip, [N]e " << endl;
 	char AA = cin.get();
@@ -56,18 +55,8 @@ int main(int argc, char** argv) {
 		generuoti(10000, to_string(10000));
 		generuoti(100000, to_string(100000));
 		generuoti(1000000, to_string(1000000));
-	} else {
-		fflush(stdin);
-		cout << "Tuo atvëju, ar norësite vesti duomenis ranka? [T]aip, [N]e" << endl;
-		char Q;
-		Q = cin.get();
-		if(Q == 'T' || Q == 't'){
-			input = true;
-		} else {
-			input = false;
-		}
 	}
-
+	bool input = false;
 	fflush(stdin);
 	//atskiros funkcijos
 	int suf[] = {1000, 10000, 100000, 1000000};
@@ -75,11 +64,7 @@ int main(int argc, char** argv) {
 		cout << "===================================" << endl;
 		cout << setw(7) << suf[I] << ": | Skaitymas |" << " Rûðiavimas |" << endl;
 		cout << setw(10) << "Vector: |";
-		skaityti<vector>(input, suf[I]); 
-		cout << setw(10) << "Deque: |";
-		skaityti<deque>(input, suf[I]);
-		cout << setw(10) << "List: |";
-		skaityti<list>(input, suf[I]);
+		skaityti(input, suf[I]); 
 	}
 	
 	system("pause");
@@ -87,94 +72,21 @@ int main(int argc, char** argv) {
 }
 
 
-template<template <typename, typename> class Container>
+
 void skaityti(bool input, int num) {
 	
 	
 	auto start = chrono::high_resolution_clock::now();
 	//deklaracija
-	Container<studentas, allocator<studentas> > studentai; //std::allocator privalomas!
-	Container<studentas, allocator<studentas> > cool;
-	Container<studentas, allocator<studentas> > notcool;
+	vector<Studentas> studentai; //std::allocator privalomas!
+	vector<Studentas> cool;
+	vector<Studentas> notcool;
 	int counter = 0;
 	string vrd; //laikinas skaitliukas vardui
-	studentas S;
+	Studentas S;
 
-	typedef typename Container<studentas, allocator<studentas> >::iterator elementas;
+	typedef typename vector<Studentas>::iterator elementas;
 
-	//ivedimas
-	if(input){
-	cout << "Iveskite varda - tarpas kaip pirmas simbolis sustabdys ivesti: " << endl;
-	while(getline(cin, vrd)){
-	if(vrd[0] == ' '){
-	 break;
-	} else {
-		S.vardas = vrd;
-		
-		vrd = "";
-	}
-	//enter turi sustabdyti ivesties cikla
-	//string traktuojamas kaip char[] masyvas
-	string Q;
-	cout << endl << "Iveskite pavarde: " << endl;
-	cin >> Q;
-	
-	S.pavarde = Q;
-	//-------------------------------
-	int ndsk = 0; //namu darbu skaicius kiekvienam zmogui.
-	while(true){
-		
-		ND:
-			cout << endl << "Iveskite namu darbu rezultata arba bet koki neskaitini simboli jei viskas " << endl;
-			float I;
-			vector<float> fvec;
-			cin >> I;
-			if(!RANGE(I)){
-				cout << "Namu darbu rezultatas turi buti tarp 0 ir 10!" << endl;
-				goto ND;	
-			}
-	if(!cin.good()){
-		if(ndsk == 0){
-				cout << "Iveskite bent viena namu darbo bala!" << endl;
-				cin.clear();
-				fflush(stdin);
-				goto ND;
-		}
-
-		cin.clear();
-		fflush(stdin);
-		break;
-	}
-	S.namudarbai = fvec;
-	S.namudarbai.push_back(I);
-	ndsk++;
-	}
-	cin.clear();
-	fflush(stdin);
-	float I = 0;
-	
-	//etiketes naudojimas su goto
-	ivestis:
-		cout << endl << "Iveskite egzamino rezultata" << endl;
-		cin >> I;
-		if(!RANGE(I)){
-			cout << "Egzamino rezultatas turi buti tarp 0 ir 10!" << endl;
-			goto ivestis;
-		}
-		if(cin.good()){
-			S.egzaminas = I;
-		} else {
-			cout << "Egzamino rezultatas turi buti skaicius!" << endl;
-			fflush(stdin);
-			cin.clear();
-			goto ivestis;
-		}
-	studentai.push_back(S);
-	counter++;
-	cout << "Iveskite varda - tarpas kaip pirmas simbolis sustabdys ivesti: " << endl;
-	cin.ignore();
-	}
-	}
 	//===============================DARBAS SU FAILAIS==================================
 	
 	
@@ -184,7 +96,6 @@ void skaityti(bool input, int num) {
 	fname +=  + ".txt";
 	
 	ifstream kursiokai(fname);
-	#ifdef FILEINPUT
 	string data; //vardas
 	string unused;
 	if(!getline(kursiokai, unused)){ //klaidu patikra ir kategoriju praleidimas;
@@ -197,59 +108,18 @@ void skaityti(bool input, int num) {
 	while(getline(buferis, data)){
 		
 		stringstream eilute(data);
-		studentas SV;
-		string vardasf;
-		eilute >> vardasf;
-		SV.vardas = vardasf;
-		//------------------------------
-		string pavardef;
-		eilute >> pavardef;
-		SV.pavarde = pavardef;		
-		//------------------------------
-		float ndbalas;
-		vector<float> ndzmogui;
-		while(eilute >> ndbalas){
-			//namu darbai - vektorius.
-			ndzmogui.push_back(ndbalas);			
-		}
-		int J = (int) ndzmogui.size();
-		float egzaminas = ndzmogui.at(J - 1);
-		ndzmogui.pop_back();
-		SV.namudarbai = ndzmogui;
-		SV.egzaminas = egzaminas;
-		//------------------------------
+		Studentas SV(eilute);
 		studentai.push_back(SV);
 		counter++;
 		//------------------------------
 		
 	}
-	#endif
 
 	auto end = chrono::high_resolution_clock::now();
 		chrono::duration<double> diff = end - start;
 		cout << setw(8) << fixed << setprecision(5) << diff.count() << "s. | ";
 	
 	//apdorojimas
-	for(int I = 0; I < counter; I++){
-		//vidurkis
-		int J = 0;
-		float tempvid = 0;
-		float tempmed = 0;
-		elementas el = studentai.begin();
-		advance(el, I);
-		
-		while(J < el->namudarbai.size()){
-			tempvid += el->namudarbai.at(J) * 0.4;
-			J++;
-		}
-		tempvid /= J;
-		
-		tempvid += el->egzaminas * 0.6;
-		el->vidurkis = tempvid;
-		//mediana
-		el->mediana = mediana(el->namudarbai); //ND[I] rodo i savo vidini vektoriu
-		
-	}
 	rusiuoti(studentai, cool, notcool);
 	isvesti(cool, notcool);
 	//isvedimas
@@ -257,39 +127,27 @@ void skaityti(bool input, int num) {
 			//cout << "---------------------------------------------------------------------------------" << endl;
 		
 		//visu vektoriu dydziai 10k+1
-	if(input){
-		
-	for(int H = 0; H < counter; H++){
-		elementas el = studentai.begin();
-		advance(el, H);
-		try{
-			cout << setprecision(2) << fixed << el->vardas << " \t " << el->pavarde << " \t  " << el->vidurkis << " \t " << el->mediana << endl;			
-		} catch (exception& e){
-			e.what();
-			cout << "Programos klaida. Paleiskite ið naujo! " << endl;
-		}
-	}
-	}
+
 }
 
-bool gavoSkola(const studentas& st){
-	if(st.vidurkis < 5) return true;
+bool gavoSkola(const Studentas& st){
+	if(st.vidurkis() < 5) return true;
 	else return false;
 }
 
-bool palyginti(const studentas& s1, const studentas& s2){
-	if(s1.vidurkis == s2.vidurkis) return s1.pavarde > s2.pavarde;
-	return (s1.vidurkis > s2.vidurkis);
+bool palyginti(const Studentas& s1, const Studentas& s2){
+	if(s1.vidurkis() == s2.vidurkis()) return s1.pavarde() > s2.pavarde();
+	return (s1.vidurkis() > s2.vidurkis());
 }
 
-template<template <typename, typename> class Container>
-void rusiuoti(Container<studentas, allocator<studentas> >& stud, Container<studentas, allocator<studentas> >& vec1, Container<studentas, allocator<studentas> >& vec2){
-	typedef typename Container<studentas, allocator<studentas> >::iterator elementas;
+
+void rusiuoti(vector<Studentas>& stud, vector<Studentas>& vec1, vector<Studentas>& vec2){
+	typedef typename vector<Studentas>::iterator elementas;
 	auto start = chrono::high_resolution_clock::now();
 	//pats rusiavimas
 	//cout << stud->size() << endl;
 	elementas el = stable_partition(stud.begin(), stud.end(), gavoSkola);
-	Container<studentas, allocator<studentas> > geri(el, stud.end());
+	vector<Studentas> geri(el, stud.end());
 	vec1 = geri;
 	//matavimas
 	auto end = chrono::high_resolution_clock::now();
@@ -297,9 +155,9 @@ void rusiuoti(Container<studentas, allocator<studentas> >& stud, Container<stude
 	cout <<  fixed << setprecision(6) << dif.count() << "s. |" << endl;
 }
 
-template<template <typename, typename> class Container>
-void isvesti(Container<studentas, allocator<studentas> >& cool, Container<studentas, allocator<studentas> >& notcool){
-	typedef typename Container<studentas, allocator<studentas> >::iterator elementas;
+
+void isvesti(vector<Studentas>& cool, vector<Studentas>& notcool){
+	typedef typename vector<Studentas>::iterator elementas;
 	auto start = chrono::high_resolution_clock::now();
 	ofstream m("Linksmuciai.txt");
 	ofstream n("Sadbois.txt");
@@ -309,22 +167,22 @@ void isvesti(Container<studentas, allocator<studentas> >& cool, Container<studen
 	
 	for(auto &B : cool){
 		
-		good << B.vardas << " " << B.pavarde << " ";
-		for(int J = 0; J < B.namudarbai.size(); J++){
-			good << B.namudarbai.at(J) << " ";
+		good << B.vardas() << " " << B.pavarde() << " ";
+		for(int J = 0; J < B.printND().size(); J++){
+			good << B.printND().at(J) << " ";
 		}
-		good << B.egzaminas << endl;
+		good << B.egzaminas() << endl;
 		//cout << "Linksmuciai " << endl;
 	}
 	m << good;
 	
 	for(auto &W : notcool){
 		
-		bad << W.vardas << " " << W.pavarde << " ";
-		for(int K = 0; K < W.namudarbai.size(); K++){
-			bad << W.namudarbai.at(K) << " ";
+		bad << W.vardas() << " " << W.pavarde() << " ";
+		for(int K = 0; K < W.printND().size(); K++){
+			bad << W.printND().at(K) << " ";
 		}
-		bad << W.egzaminas << endl;
+		bad << W.egzaminas() << endl;
 		//cout << "Sadbois " << endl;
 	}
 	n << bad;
