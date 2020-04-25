@@ -4,14 +4,14 @@
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = deklaracijos.o main.o skaityti.o Studentas.o
-LINKOBJ  = deklaracijos.o main.o skaityti.o Studentas.o
+OBJ      = deklaracijos.o main.o Studentas.o
+LINKOBJ  = deklaracijos.o main.o Studentas.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
 BIN      = ProjectX.exe
-CXXFLAGS = $(CXXINCS) -Ofast -std=c++11 -g3 -fpermissive
-CFLAGS   = $(INCS) -Ofast -std=c++11 -g3
+CXXFLAGS = $(CXXINCS) -std=c++11 -g3
+CFLAGS   = $(INCS) -std=c++11 -g3
 RM       = rm.exe -f
 
 .PHONY: all all-before all-after clean clean-custom
@@ -29,9 +29,6 @@ deklaracijos.o: deklaracijos.cpp
 
 main.o: main.cpp
 	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
-
-skaityti.o: skaityti.cpp
-	$(CPP) -c skaityti.cpp -o skaityti.o $(CXXFLAGS)
 
 Studentas.o: Studentas.cpp
 	$(CPP) -c Studentas.cpp -o Studentas.o $(CXXFLAGS)

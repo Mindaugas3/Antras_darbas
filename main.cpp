@@ -146,7 +146,7 @@ void rusiuoti(vector<Studentas>& stud, vector<Studentas>& vec1, vector<Studentas
 	auto start = chrono::high_resolution_clock::now();
 	//pats rusiavimas
 	//cout << stud->size() << endl;
-	elementas el = stable_partition(stud.begin(), stud.end(), gavoSkola);
+	auto el = stable_partition(stud.begin(), stud.end(), gavoSkola);
 	vector<Studentas> geri(el, stud.end());
 	vec1 = geri;
 	//matavimas
