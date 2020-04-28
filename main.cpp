@@ -122,11 +122,6 @@ void skaityti(bool input, int num) {
 	//apdorojimas
 	rusiuoti(studentai, cool, notcool);
 	isvesti(cool, notcool);
-	//isvedimas
-			//cout << "Vardas: \t Pavarde: \t Galutinis: \t Mediana: "<< endl;
-			//cout << "---------------------------------------------------------------------------------" << endl;
-		
-		//visu vektoriu dydziai 10k+1
 
 }
 
@@ -155,7 +150,6 @@ void rusiuoti(vector<Studentas>& stud, vector<Studentas>& vec1, vector<Studentas
 
 
 void isvesti(vector<Studentas>& cool, vector<Studentas>& notcool){
-	typedef typename vector<Studentas>::iterator elementas;
 	auto start = chrono::high_resolution_clock::now();
 	ofstream m("Linksmuciai.txt");
 	ofstream n("Sadbois.txt");

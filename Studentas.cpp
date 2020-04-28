@@ -1,5 +1,27 @@
 #include "Studentas.h"
 
+Asmuo::Asmuo(){
+	vardas_ = "";
+	pavarde_ = "";
+}
+
+Asmuo::Asmuo(std::string vardas, std::string pavarde){
+	vardas_ = vardas;
+	pavarde_ = pavarde;
+}
+
+Asmuo::Asmuo(const Asmuo& X){
+	Asmuo::set_vardas(X.vardas());
+	Asmuo::set_pavarde(X.pavarde());
+}
+
+void Asmuo::set_pavarde(std::string pavarde){
+	pavarde_ = pavarde;
+}
+
+void Asmuo::set_vardas(std::string vardas){
+	vardas_ = vardas;
+}
 // konstruktoriaus realizacija
 Studentas::Studentas(std::istream& is) { 
   // kreipiasi á Studentas::readStudent;
