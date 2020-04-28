@@ -131,13 +131,11 @@ void skaityti(bool input, int num) {
 }
 
 bool gavoSkola(const Studentas& st){
-	if(st.vidurkis() < 5) return true;
-	else return false;
+	return st.gavoSkola();
 }
 
 bool palyginti(const Studentas& s1, const Studentas& s2){
-	if(s1.vidurkis() == s2.vidurkis()) return s1.pavarde() > s2.pavarde();
-	return (s1.vidurkis() > s2.vidurkis());
+	return s1 > s2;
 }
 
 

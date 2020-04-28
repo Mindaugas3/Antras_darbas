@@ -37,8 +37,8 @@ std::istream& Studentas::readStudent(std::istream& I, const Studentas& S) {
     return I;
 }
 
-// Ne Studentas member funkcija, bet dirba su Studentas objektais, todël realizacija èia
-bool compare(const Studentas&, const Studentas&) {
+bool Studentas::gavoSkola() const{
+	return (this->vidurkis() < 5);
   // realizacija 
 }
 
@@ -61,9 +61,11 @@ void Studentas::set_nd(std::vector<float> nd){
 
 float Studentas::vidurkis() const{
 	float tempvid = 0;
-	int J = 1;
+	int J = 0;
+	if(this->nd_.empty()) return 0;
+	
 	while(J < this->nd_.size()){
-			tempvid += this->nd_.at(J - 1) * 0.4;
+			tempvid += this->nd_.at(J) * 0.4;
 			J++;
 		}
 	tempvid /= J;
@@ -72,17 +74,31 @@ float Studentas::vidurkis() const{
 }
 
 //operatoriai - priskyrimas
-Studentas Studentas::operator= (const Studentas& s){
+Studentas Studentas::operator = (const Studentas& s){
 	this->set_vardas(s.vardas());
 	this->set_pavarde(s.pavarde());
 	this->set_egzaminas(s.egzaminas());
 	this->set_nd(s.printND());
+	return *this; //pamirsau return *this, todel crashino
+}
+
+//palyginimo operatoriai
+bool Studentas::operator > (const Studentas& s) const{
+	if(this->vidurkis() == s.vidurkis()) return this->pavarde() > s.pavarde();
+	return this->vidurkis() > s.vidurkis();
+}
+
+bool Studentas::operator < (const Studentas& s) const{
+	if(this->vidurkis() == s.vidurkis()) return this->pavarde() < s.pavarde();
+	return this->vidurkis() < s.vidurkis();
 }
 
 //destruktorius
+
 Studentas::~Studentas(){
-	//nd_.clear();
+	nd_.clear();
 }
+
 
 /* Realizacija likusiø (member) funkcijø
  .
