@@ -12,8 +12,8 @@ class Asmuo {
 	public:
   		virtual void set_vardas(std::string vardas) = 0;
   		virtual void set_pavarde(std::string pavarde) = 0;
-	 	inline virtual std::string vardas() const { return vardas_; }    // get'eriai, inline
-  		inline virtual std::string pavarde() const { return pavarde_; }  // get'eriai, inline
+	 	virtual std::string vardas() const = 0;    // get'eriai, inline
+  		virtual std::string pavarde() const = 0;  // get'eriai, inline
 		virtual ~Asmuo(){};
 };
 
@@ -34,8 +34,8 @@ public:
   float vidurkis() const;
   bool gavoSkola() const;
   inline float egzaminas() const { return egzaminas_;}
-  inline std::string pavarde() const { return pavarde(); }
-  inline std::string vardas() const { return vardas(); }
+   std::string pavarde() const { return pavarde_; }
+   std::string vardas() const { return vardas_; }
   //seteriai
 
   	void set_vardas(std::string vardas);
@@ -43,7 +43,7 @@ public:
     void set_egzaminas(float balas);
     void set_nd(std::vector<float> nd);
 
-  std::istream& readStudent(std::istream& I, const Studentas& s);  // set'eriai
+  std::istream& readStudent(std::istream& I, Studentas& s);  // set'eriai
   Studentas operator= (const Studentas& s);
   bool operator> (const Studentas& s) const;
   bool operator< (const Studentas& s) const;

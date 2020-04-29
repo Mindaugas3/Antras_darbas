@@ -37,14 +37,14 @@ Studentas::Studentas(const Studentas& s){
 }
 
 // Studentas::readStudent realizacija
-std::istream& Studentas::readStudent(std::istream& I, const Studentas& S) {
+std::istream& Studentas::readStudent(std::istream& I, Studentas& S) {
   // Member funkcijos realizacija paremta ankstesniojo 2-ojo darbo funkcija: 
   // std::istream& readStudent(std::istream&, Studentas&)
     std::string vardas, pavarde;
   	I >> vardas;
   	I >> pavarde;
-  	set_vardas(vardas);
-  	set_pavarde(pavarde);
+  	S.set_vardas(vardas);
+  	S.set_pavarde(pavarde);
   	float ndbalas;
 	std::vector<float> ndzmogui;
 	while(I >> ndbalas){
