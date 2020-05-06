@@ -129,6 +129,9 @@ bool gavoSkola(const Studentas& st){
 	return st.gavoSkola();
 }
 
+bool NegavoSkolos(const Studentas& s){
+	return !s.gavoSkola();
+}
 bool palyginti(const Studentas& s1, const Studentas& s2){
 	return s1 > s2;
 }
@@ -142,6 +145,10 @@ void rusiuoti(vector<Studentas>& stud, vector<Studentas>& vec1, vector<Studentas
 	auto el = stable_partition(stud.begin(), stud.end(), gavoSkola);
 	vector<Studentas> geri(el, stud.end());
 	vec1 = geri;
+	
+	auto el2 = stable_partition(stud.begin(), stud.end(), NegavoSkolos);
+	vector<Studentas> blogi(el2, stud.end());
+	vec2 = blogi;
 	//matavimas
 	auto end = chrono::high_resolution_clock::now();
 	chrono::duration<double> dif = end - start;
@@ -153,31 +160,28 @@ void isvesti(vector<Studentas>& cool, vector<Studentas>& notcool){
 	auto start = chrono::high_resolution_clock::now();
 	ofstream m("Linksmuciai.txt");
 	ofstream n("Sadbois.txt");
-	//buferis
-	stringstream good;
-	stringstream bad;
+
 	
 	for(auto &B : cool){
 		
-		good << B.vardas() << " " << B.pavarde() << " ";
+		m << B.vardas() << " " << B.pavarde() << " ";
 		for(int J = 0; J < B.printND().size(); J++){
-			good << B.printND().at(J) << " ";
+			m << B.printND().at(J) << " ";
 		}
-		good << B.egzaminas() << endl;
+		m << B.egzaminas() << endl;
 		//cout << "Linksmuciai " << endl;
 	}
-	m << good;
-	
+
 	for(auto &W : notcool){
 		
-		bad << W.vardas() << " " << W.pavarde() << " ";
+		n << W.vardas() << " " << W.pavarde() << " ";
 		for(int K = 0; K < W.printND().size(); K++){
-			bad << W.printND().at(K) << " ";
+			n << W.printND().at(K) << " ";
 		}
-		bad << W.egzaminas() << endl;
+		n << W.egzaminas() << endl;
 		//cout << "Sadbois " << endl;
 	}
-	n << bad;
+
 	m.close();
 	n.close();
 	auto end = chrono::high_resolution_clock::now();
