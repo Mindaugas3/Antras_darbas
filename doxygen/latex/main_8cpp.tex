@@ -1,0 +1,196 @@
+\hypertarget{main_8cpp}{}\doxysection{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.cpp@{main.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$deque$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$exception$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include \char`\"{}deklaracijos.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Studentas.\+h\char`\"{}}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a522f24ba740b8505c430f3e87cb8d1b9}{F\+I\+L\+E\+I\+N\+P\+UT}}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_af2559abdd89ed02744ba8116d3417b45}{M\+A\+X\+G\+EN}}~20
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{main_8cpp_a4017437fead3f288f8135a26c5ee4add}{gavo\+Skola}} (const \mbox{\hyperlink{class_studentas}{Studentas}} \&st)
+\item 
+void \mbox{\hyperlink{main_8cpp_a10104a0952fe3a6240edec35feb21f89}{rusiuoti}} (vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&stud, vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&vec1, vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&vec2)
+\item 
+void \mbox{\hyperlink{main_8cpp_a319b87a1986e747a1c0a40761aa205a4}{generuoti}} (int size, string suffix)
+\item 
+void \mbox{\hyperlink{main_8cpp_a56914953613452b3ed315d269818e619}{isvesti}} (vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&cool, vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&notcool)
+\item 
+void \mbox{\hyperlink{main_8cpp_a50d4e1f957b4d5053e686e48629f9dfc}{avardas}} (string $\ast$vrd, string $\ast$pvrd)
+\item 
+void \mbox{\hyperlink{main_8cpp_a41cf889fec62901eb431c8df35a92fe1}{rasti\+Failus}} (string $\ast$fpav)
+\item 
+void \mbox{\hyperlink{main_8cpp_ad71b11517331e3c601b26af039594f63}{skaityti}} (bool input, int num)
+\item 
+int \mbox{\hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\item 
+bool \mbox{\hyperlink{main_8cpp_a4cf68a48647a8f2d06c652079529c5ad}{Negavo\+Skolos}} (const \mbox{\hyperlink{class_studentas}{Studentas}} \&s)
+\item 
+bool \mbox{\hyperlink{main_8cpp_a6034db0cf68880dd8b0fd3f517b8b3b6}{palyginti}} (const \mbox{\hyperlink{class_studentas}{Studentas}} \&s1, const \mbox{\hyperlink{class_studentas}{Studentas}} \&s2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8cpp_a522f24ba740b8505c430f3e87cb8d1b9}\label{main_8cpp_a522f24ba740b8505c430f3e87cb8d1b9}} 
+\index{main.cpp@{main.cpp}!FILEINPUT@{FILEINPUT}}
+\index{FILEINPUT@{FILEINPUT}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{FILEINPUT}{FILEINPUT}}
+{\footnotesize\ttfamily \#define F\+I\+L\+E\+I\+N\+P\+UT}
+
+
+
+Definition at line 25 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_af2559abdd89ed02744ba8116d3417b45}\label{main_8cpp_af2559abdd89ed02744ba8116d3417b45}} 
+\index{main.cpp@{main.cpp}!MAXGEN@{MAXGEN}}
+\index{MAXGEN@{MAXGEN}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{MAXGEN}{MAXGEN}}
+{\footnotesize\ttfamily \#define M\+A\+X\+G\+EN~20}
+
+
+
+Definition at line 26 of file main.\+cpp.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a50d4e1f957b4d5053e686e48629f9dfc}\label{main_8cpp_a50d4e1f957b4d5053e686e48629f9dfc}} 
+\index{main.cpp@{main.cpp}!avardas@{avardas}}
+\index{avardas@{avardas}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{avardas()}{avardas()}}
+{\footnotesize\ttfamily void avardas (\begin{DoxyParamCaption}\item[{string $\ast$}]{vrd,  }\item[{string $\ast$}]{pvrd }\end{DoxyParamCaption})}
+
+
+
+Definition at line 192 of file main.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{main_8cpp_a4017437fead3f288f8135a26c5ee4add}\label{main_8cpp_a4017437fead3f288f8135a26c5ee4add}} 
+\index{main.cpp@{main.cpp}!gavoSkola@{gavoSkola}}
+\index{gavoSkola@{gavoSkola}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{gavoSkola()}{gavoSkola()}}
+{\footnotesize\ttfamily bool gavo\+Skola (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{st }\end{DoxyParamCaption})}
+
+
+
+Definition at line 128 of file main.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{main_8cpp_a319b87a1986e747a1c0a40761aa205a4}\label{main_8cpp_a319b87a1986e747a1c0a40761aa205a4}} 
+\index{main.cpp@{main.cpp}!generuoti@{generuoti}}
+\index{generuoti@{generuoti}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{generuoti()}{generuoti()}}
+{\footnotesize\ttfamily void generuoti (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{string}]{suffix }\end{DoxyParamCaption})}
+
+
+
+Definition at line 208 of file main.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{main_8cpp_a56914953613452b3ed315d269818e619}\label{main_8cpp_a56914953613452b3ed315d269818e619}} 
+\index{main.cpp@{main.cpp}!isvesti@{isvesti}}
+\index{isvesti@{isvesti}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{isvesti()}{isvesti()}}
+{\footnotesize\ttfamily void isvesti (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{cool,  }\item[{vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{notcool }\end{DoxyParamCaption})}
+
+
+
+Definition at line 159 of file main.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Definition at line 47 of file main.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{main_8cpp_a4cf68a48647a8f2d06c652079529c5ad}\label{main_8cpp_a4cf68a48647a8f2d06c652079529c5ad}} 
+\index{main.cpp@{main.cpp}!NegavoSkolos@{NegavoSkolos}}
+\index{NegavoSkolos@{NegavoSkolos}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{NegavoSkolos()}{NegavoSkolos()}}
+{\footnotesize\ttfamily bool Negavo\+Skolos (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line 132 of file main.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 8
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{main_8cpp_a6034db0cf68880dd8b0fd3f517b8b3b6}\label{main_8cpp_a6034db0cf68880dd8b0fd3f517b8b3b6}} 
+\index{main.cpp@{main.cpp}!palyginti@{palyginti}}
+\index{palyginti@{palyginti}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{palyginti()}{palyginti()}}
+{\footnotesize\ttfamily bool palyginti (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{s1,  }\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{s2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 135 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a41cf889fec62901eb431c8df35a92fe1}\label{main_8cpp_a41cf889fec62901eb431c8df35a92fe1}} 
+\index{main.cpp@{main.cpp}!rastiFailus@{rastiFailus}}
+\index{rastiFailus@{rastiFailus}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{rastiFailus()}{rastiFailus()}}
+{\footnotesize\ttfamily void rasti\+Failus (\begin{DoxyParamCaption}\item[{string $\ast$}]{fpav }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a10104a0952fe3a6240edec35feb21f89}\label{main_8cpp_a10104a0952fe3a6240edec35feb21f89}} 
+\index{main.cpp@{main.cpp}!rusiuoti@{rusiuoti}}
+\index{rusiuoti@{rusiuoti}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{rusiuoti()}{rusiuoti()}}
+{\footnotesize\ttfamily void rusiuoti (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{stud,  }\item[{vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{vec1,  }\item[{vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{vec2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 140 of file main.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 10
+Here is the caller graph for this function\+:
+% FIG 11
+\mbox{\Hypertarget{main_8cpp_ad71b11517331e3c601b26af039594f63}\label{main_8cpp_ad71b11517331e3c601b26af039594f63}} 
+\index{main.cpp@{main.cpp}!skaityti@{skaityti}}
+\index{skaityti@{skaityti}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{skaityti()}{skaityti()}}
+{\footnotesize\ttfamily void skaityti (\begin{DoxyParamCaption}\item[{bool}]{input,  }\item[{int}]{num }\end{DoxyParamCaption})}
+
+
+
+Definition at line 76 of file main.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 12
+Here is the caller graph for this function\+:
+% FIG 13

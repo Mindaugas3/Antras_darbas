@@ -1,7 +1,9 @@
-1.2 versija
-**Pridėta:**
+2.0 versija
+**Ištestuota:**
   - Konstruktorius
-  - Destruktorius
   - **Operatoriai:**
     - Priskyrimo operatorius
     - Palyginimo operatoriai < ir >
+**Pridėtas:**
+  - Palyginimo operatorius
+  - Pilna projekto dokumentacija

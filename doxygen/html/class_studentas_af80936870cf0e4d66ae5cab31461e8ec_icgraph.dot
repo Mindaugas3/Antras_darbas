@@ -1,0 +1,24 @@
+digraph "Studentas::pavarde"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Studentas::pavarde",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Studentas::operator\<",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_studentas.html#aaf77de0667d25b868063725a4754221f",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Studentas::operator=",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_studentas.html#a503ef1a376d3d03ef9e32920d4547271",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Studentas::operator\>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_studentas.html#ac0f048a5849707b498d1abea3f232546",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Studentas::readStudent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_studentas.html#ae03c42e66f7484b70d5133432bfdea87",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Studentas::Studentas",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_studentas.html#a00d6db6706f5e4182d3677ea4e90de61",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Studentas::set_pavarde",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_studentas.html#aa0639e3fd4e99db2a3ef1fb7bf51d49e",tooltip=" "];
+  Node7 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Studentas::Studentas",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_studentas.html#a919251ec5bbb012f622a9bedfd804a21",tooltip=" "];
+}

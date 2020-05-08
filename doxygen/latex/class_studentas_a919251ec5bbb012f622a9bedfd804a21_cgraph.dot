@@ -1,0 +1,16 @@
+digraph "Studentas::Studentas"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Studentas::Studentas",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Studentas::egzaminas",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_studentas.html#a567eb5e615bcd80fb2cb5e2ae7bdbfe1",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Studentas::pavarde",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_studentas.html#af80936870cf0e4d66ae5cab31461e8ec",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Studentas::printND",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_studentas.html#acf97a0a1d67e96d7c8b4194e5f2f4648",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Studentas::vardas",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_studentas.html#a000a73298cd723400eeea22427bd437b",tooltip=" "];
+}
